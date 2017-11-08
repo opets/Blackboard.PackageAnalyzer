@@ -1,0 +1,17 @@
+syntax: glob
+*.DotSettings
+*.orig
+*.suo
+*.user
+.generated
+.sonar
+.vs/
+_ReSharper.*
+Debug
+Release
+bin
+obj
+nuget.exe
+packages
+v2/CPC/**
+v2/Test/**

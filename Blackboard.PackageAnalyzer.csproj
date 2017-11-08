@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12345678-4CEB-4150-A108-8374651BD9D3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blackboard.PackageAnalyzer</RootNamespace>
+    <AssemblyName>Blackboard.PackageAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\ConversionFramework\D2L.Conversion.Framework.IO.FileSystem\D2L.Conversion.Framework.IO.FileSystem.csproj">
+      <Project>{4FD889C2-EAF9-478F-A16A-24709C24BC0D}</Project>
+      <Name>D2L.Conversion.Framework.IO.FileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ConverterFramework\D2L.Conversion.Base\D2L.Conversion.Base.csproj">
+      <Project>{97479532-2944-4F0E-AF5D-E007F792D64F}</Project>
+      <Name>D2L.Conversion.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\D2L.Conversion.Converters.Blackboard.CPC\D2L.Conversion.Converters.Blackboard.CPC.csproj">
+      <Project>{66B887F6-E4DF-43AE-9D03-4F5E7B93521A}</Project>
+      <Name>D2L.Conversion.Converters.Blackboard.CPC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionContext.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\FileSystemWrapper.cs" />
+    <Compile Include="Common\ResourceElement.cs" />
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="Actions\ActionHelper.cs" />
+    <Compile Include="Actions\CommonActions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Actions\QuizActions.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
