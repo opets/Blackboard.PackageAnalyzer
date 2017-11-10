@@ -160,6 +160,26 @@ namespace Blackboard.PackageAnalyzer.Actions {
 
 		}
 
+		public static void GetAllPlainTextQuestions( ActionContext actionContext, Action<string, Exception> logMessageAction ) {
+
+			// assessment/x-bb-qti-attempt ?
+			string[] resourcePaths = actionContext
+				.GetManifestResources( "assessment/x-bb-qti-test", "assessment/x-bb-qti-pool" )
+				.Select( resource => Path.Combine( actionContext.ExtractedPackageDirectory, resource.FileName ) )
+				.Where( File.Exists )
+				.ToArray();
+
+			foreach( string path in resourcePaths ) {
+				XDocument doc = ActionHelper.GetDocument( path );
+				XElement[] questionTypes = doc.XPathSelectElements( "//presentation/flow/flow[@class='QUESTION_BLOCK']/flow[@class='FORMATTED_TEXT_BLOCK']/material/mat_extension/mat_formattedtext" )
+					.Where( e => "PLAIN_TEXT".Equals( e.Attribute( "type" )?.Value ) )
+					.ToArray();
+				//logMessageAction( $"{actionContext.PackageName}\t{Path.GetFileName( path )}\t{string.Join( ", ", questionTypes )}", null );
+				foreach( XElement e in questionTypes ) {
+					logMessageAction( $"{e.Attribute( "type" )?.Value}\t{actionContext.PackageName}\t{Path.GetFileName( path )}\t{e.Value}", null );
+				}
+			}
+		}
 
 	}
 }

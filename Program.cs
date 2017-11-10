@@ -20,6 +20,7 @@ namespace Blackboard.PackageAnalyzer {
 				{ "QUIZ_NESTED_CATEGORIES", QuizActions.GetNestedCategories },
 				{ "QUIZ_NESTED_CATEGORIES_WITH_ITEM", QuizActions.GetNestedCategoriesWithItem },
 				{ "QUIZ_SECTION_NOT_IN_ASSESSMENT", QuizActions.GetSectionNotInAssessment },
+				{ "QUIZ_PLAIN_TEXT", QuizActions.GetAllPlainTextQuestions },
 				{ "QUIZ_OBJECTBANK", QuizActions.GetObjectbanks },
 				{ "COMMON_NO_IMS_MANIFEST", CommonActions.NoImsManifest },
 				{ "AVAILABLE_RESOURCE_TYPES", CommonActions.AvailableResourceTypes }
