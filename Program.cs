@@ -21,7 +21,14 @@ namespace Blackboard.PackageAnalyzer {
 				{ "QUIZ_NESTED_CATEGORIES_WITH_ITEM", QuizActions.GetNestedCategoriesWithItem },
 				{ "QUIZ_SECTION_NOT_IN_ASSESSMENT", QuizActions.GetSectionNotInAssessment },
 				{ "QUIZ_PLAIN_TEXT", QuizActions.GetAllPlainTextQuestions },
+				{ "QUIZ_FEEDBACK_PLAIN_TEXT", QuizActions.GetAllFeedbackPlainTextQuestions },
 				{ "QUIZ_OBJECTBANK", QuizActions.GetObjectbanks },
+				{ "QUIZ_TEST_QUESTIN_BY_ATTRIBUTE", QuizActions.TestQuestionWithAttribute1 },
+				{ "QUIZ_TEST_QUESTIN_BY_ATTRIBUTE2", QuizActions.TestQuestionWithAttribute2 },
+				{ "QUIZ_GROUP_QUESTIN_BY_MATTEXT_TYPE", QuizActions.GetAllQuestionMattextTypes },
+				{ "QUIZ_QUESTION_WITH_IMAGE_URI", QuizActions.QuestionWithImageUri },
+				{ "QUIZ_QUESTION_WITH_PROP", QuizActions.QuestionWithProperty },
+
 				{ "COMMON_NO_IMS_MANIFEST", CommonActions.NoImsManifest },
 				{ "AVAILABLE_RESOURCE_TYPES", CommonActions.AvailableResourceTypes }
 			};
