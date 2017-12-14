@@ -299,7 +299,7 @@ namespace Blackboard.PackageAnalyzer.Actions {
 
 		public static void QuestionWithProperty( ActionContext actionContext, Action<string, Exception> logMessageAction ) {
 			const string propName = "bbmd_numbertype";
-			const string excludePropValue = "bbmd_numbertype";
+			const string excludePropValue = null;
 
 			// assessment/x-bb-qti-attempt ?
 			string[] resourcePaths = actionContext
@@ -315,7 +315,7 @@ namespace Blackboard.PackageAnalyzer.Actions {
 					.ToArray();
 				//logMessageAction( $"{actionContext.PackageName}\t{Path.GetFileName( path )}\t{string.Join( ", ", questionTypes )}", null );
 				foreach( var question in questions ) {
-					string propValue = question.XPathSelectElement( "itemmetadata/"+propName )?.Value;
+					string propValue = question.XPathSelectElement( "presentation/flow/material/mattext")?.Value;
 					string questionType = question.XPathSelectElement( "itemmetadata/bbmd_questiontype" )?.Value;
 					if( propValue != excludePropValue ) 
 					{

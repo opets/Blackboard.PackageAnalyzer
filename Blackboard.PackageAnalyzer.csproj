@@ -56,9 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionContext.cs" />
+    <Compile Include="Actions\DiscussionActions.cs" />
+    <Compile Include="Actions\SurveyActions.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\FileSystemWrapper.cs" />
     <Compile Include="Common\ResourceElement.cs" />
+    <Compile Include="Shared\BlackboardPackageVersionResolver.cs" />
+    <Compile Include="Shared\Constants.cs" />
+    <Compile Include="Shared\PackageVersion.cs" />
     <Compile Include="XmlHelper.cs" />
     <Compile Include="Actions\ActionHelper.cs" />
     <Compile Include="Actions\CommonActions.cs" />

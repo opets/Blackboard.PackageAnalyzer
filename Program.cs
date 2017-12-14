@@ -29,7 +29,17 @@ namespace Blackboard.PackageAnalyzer {
 				{ "QUIZ_QUESTION_WITH_IMAGE_URI", QuizActions.QuestionWithImageUri },
 				{ "QUIZ_QUESTION_WITH_PROP", QuizActions.QuestionWithProperty },
 
+				{ "SURVEY_NESTED_ASSESSMENT", SurveyActions.GetNestedAssessment },
+
+				{ "DISCUSSION_WITH_FLAG", DiscussionActions.DiscussionWithFlag },
+				{ "DISCUSSION_MESSAGE_WITH_FLAG", DiscussionActions.DiscussionMessageWithFlag },
+
 				{ "COMMON_NO_IMS_MANIFEST", CommonActions.NoImsManifest },
+				{ "COMMON_GROUP_BY_PACKAGE_VERSION", CommonActions.GroupByPackageVersion },
+				{ "COMMON_EMBEDDED_LINKS", CommonActions.EmbeddedLinks },
+				{ "COMMON_GET_CONSTS", CommonActions.GetConsts },
+				
+
 				{ "AVAILABLE_RESOURCE_TYPES", CommonActions.AvailableResourceTypes }
 			};
 
